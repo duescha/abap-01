@@ -7,6 +7,8 @@ CLASS ycl_efm_context DEFINITION
     METHODS:
       "! Konstruktor
       constructor IMPORTING ir_data TYPE REF TO data,
+
+      "! Daten werden gesetzt!
       get_data
         RETURNING VALUE(rr_data) TYPE REF TO data,
       set_data
