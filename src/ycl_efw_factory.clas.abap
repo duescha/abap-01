@@ -4,6 +4,9 @@ CLASS ycl_efw_factory DEFINITION
   CREATE PUBLIC .
 
   PUBLIC SECTION.
+    CLASS-METHODS:
+      create IMPORTING iv_prog TYPE string iv_place TYPE string
+      RETURNING VALUE(ro_exit) TYPE REF TO ycl_efm_exit.
   PROTECTED SECTION.
   PRIVATE SECTION.
 ENDCLASS.
@@ -11,4 +14,8 @@ ENDCLASS.
 
 
 CLASS ycl_efw_factory IMPLEMENTATION.
+  METHOD create.
+    CREATE OBJECT ro_exit.
+  ENDMETHOD.
+
 ENDCLASS.
