@@ -27,8 +27,9 @@ CLASS ycl_efm_test IMPLEMENTATION.
 
     ls_data-id = 1. ls_data-value = 'test'.
 
+    delete from yefw_exit.
     GET REFERENCE OF ls_data INTO lr_data.
-    lo_exit = ycl_efw_factory=>create( iv_prog = '' iv_place = '01' ).
+    lo_exit = ycl_efw_factory=>create( iv_prog = |{ sy-repid }| iv_place = '02' ).
     lo_exit->set_context( NEW ycl_efm_context( lr_data ) ).
     lo_exit->execute( ).
     lr_data = lo_exit->get_context(  )->get_data(  ).
